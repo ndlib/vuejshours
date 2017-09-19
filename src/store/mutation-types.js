@@ -1,0 +1,3 @@
+export const HOURS_REQUEST = 'HOURS_REQUEST'
+export const HOURS_RECEIVE = 'HOURS_RECEIVE'
+export const HOURS_NO_SUCH = 'HOURS_NO_SUCH'
