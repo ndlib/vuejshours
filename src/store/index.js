@@ -12,5 +12,8 @@ export default new Vuex.Store({
   actions,
   mutations,
   getters,
-  strict: debug
+  strict: debug,
+  state: {
+    hours: { loaded: false }
+  }
 })

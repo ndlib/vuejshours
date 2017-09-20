@@ -1,34 +1,26 @@
 <template>
   <div>
-    <div v-if="loading">
+    <div v-if="!hours.loaded">
       Loading...
     </div>
 
-    <div v-if="hours">
+    <div v-if="hours.loaded">
       {{ hours.json }}
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 
 export default {
   name: 'hours',
   created () {
     this.$store.dispatch('fetchHours')
   },
-  computed: {
-    ...mapGetters({
-      hours: 'getHours'
-    })
-  },
-  data () {
-    return {
-      loading: !this.$store.state.hours.loaded,
-      hours: this.$store.state.hours.json
-    }
-  }
+  computed: mapState([
+    'hours'
+  ])
 }
 </script>
 
