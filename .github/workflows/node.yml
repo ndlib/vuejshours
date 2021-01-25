@@ -22,7 +22,7 @@ jobs:
     - name: Run Yarn install
       run: yarn install
     - name: Run NPM Build
-      run: npm run build --if-present
+      run: npm run build
     - name: Run Linters
       run: npm run lint
     - name: Run Tests
